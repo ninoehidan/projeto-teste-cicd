@@ -5,9 +5,9 @@ pipeline {
         IMAGE_NAME = 'teste-cicd'
     }
     stages {
-        stage('Checkout') {
+        stage('Check Docker') {
             steps {
-                checkout scm
+                sh "docker version" // Apenas para confirmar que o erro sumiu
             }
         }
         stage('Build Image') {
